@@ -4,3 +4,56 @@
 /* ---------------- CODE COULEUR ----------------- */
 
 /* ==================== BODY ===================== */
+
+/* on modifie le style du body (par défaut) */
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* va prendre en compte le padding, les bordures etc... dans le calcule des largeurs et des hauteurs (ne fera pas +) */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(#2b1055, #7597de);
+    height: 100vh;
+}
+
+/* =================== HEADER ==================== */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: aliceblue;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+header ul {
+    display: flex; /* va les placer sur une ligne */
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 6px 15px;
+}
+
+/* -------------- ANIMATION HEADER --------------- */
