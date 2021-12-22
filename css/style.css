@@ -29,6 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 20;
 }
 
 header .logo {
@@ -40,7 +41,7 @@ header .logo {
 }
 
 header ul {
-    display: flex; /* va les placer sur une ligne */
+    display: flex; /* va les aligner sur une ligne */
     justify-content: center;
     align-items: center;
 }
@@ -54,6 +55,65 @@ header ul li a {
     color: aliceblue;
     text-decoration: none;
     padding: 6px 15px;
+    border-radius: 20px;
 }
 
 /* -------------- ANIMATION HEADER --------------- */
+
+header ul li a:hover, 
+header ul li a.active {
+    background: aliceblue;
+    color: royalblue;
+}
+
+/* ================= MOON-LIGHT ================== */
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section img#moon {
+    mix-blend-mode: screen;
+}
+
+section img#mountains_front {
+    z-index: 10;
+}
+
+#title {
+    position: absolute;
+    color: aliceblue;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+    transform: translateY(100px);
+}
+
+/* ------------- BOUTON "EXPLOREZ" --------------- */
+
+#btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: aliceblue;
+    color: royalblue;
+    font-size: 1.5rem;
+    z-index: 9;
+}
+
