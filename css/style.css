@@ -10,12 +10,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* va prendre en compte le padding, les bordures etc... dans le calcule des largeurs et des hauteurs (ne fera pas +) */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
     background: linear-gradient(#2b1055, #7597de);
-    height: 100vh;
+    overflow-x: hidden;
 }
 
 /* =================== HEADER ==================== */
@@ -76,6 +78,17 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#1c0522,transparent);
+    z-index: 100;
 }
 
 section img {
@@ -85,6 +98,7 @@ section img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
 }
 
 section img#moon {
@@ -97,11 +111,11 @@ section img#mountains_front {
 
 #title {
     position: absolute;
+    right: -280px;
     color: aliceblue;
     white-space: nowrap;
     font-size: 7.5vw;
     z-index: 9;
-    transform: translateY(100px);
 }
 
 /* ------------- BOUTON "EXPLOREZ" --------------- */
@@ -109,11 +123,31 @@ section img#mountains_front {
 #btn {
     display: inline-block;
     text-decoration: none;
-    padding: 8px 30px;
+    padding: 10px 40px;
     border-radius: 40px;
     background: aliceblue;
     color: royalblue;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     z-index: 9;
+    transform: translateY(100px);
+    margin-bottom: -10px;
 }
 
+/* =================== POÈME ===================== */
+
+.section-text {
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+
+.section-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.section-text p {
+    font-size: 1.1rem;
+    color: aliceblue;
+}
